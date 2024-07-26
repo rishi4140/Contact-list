@@ -1,0 +1,134 @@
+@import "../../mixin.scss";
+
+.contacts-list {
+  max-width: 1200px;
+  height: 100vh;
+  overflow: hidden;
+  justify-content: center;
+  margin: auto;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+
+    @include md {
+      text-align: center;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    span {
+      font-size: 2.5rem;
+      font-weight: 600;
+
+      @include sm {
+        font-size: 2rem;
+      }
+    }
+
+    button {
+      height: 35px;
+      background-color: #efefef;
+      color: #000b1fe8;
+      font-size: 1.5rem;
+      border: none;
+      border-radius: 10px;
+      padding: 0 7px;
+      box-shadow: 1px 1px 10px rgb(68, 66, 66);
+      cursor: pointer;
+
+      &:active {
+        transform: scale(0.95);
+      }
+    }
+  }
+
+ 
+
+  .content {
+    flex: 1;
+    flex-grow: 1;
+    overflow: scroll;
+    .contact-form-wrapper {
+      position: absolute;
+      height: 100vh;
+      width: 100vw;
+      top: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .contact-form {
+        background-color: #000b1f;
+        height: 400px;
+        width: 400px;
+        border-radius: 10px;
+        padding: 20px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        box-shadow: 1px 1px 5px lightgray, -1px -1px 5px lightgray;
+
+        p {
+          position: absolute;
+          top: -30px;
+          right: 10px;
+          cursor: pointer;
+
+          &:hover {
+            color: black;
+          }
+        }
+
+        form {
+          display: flex;
+          width: 100%;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 30px;
+          margin: auto;
+
+          div {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            align-items: center;
+            gap: 10px;
+          }
+
+          input {
+            height: 40px;
+            width: 90%;
+            border-radius: 5px;
+            border: none;
+            padding: 5px 10px;
+            font-size: 1.2rem;
+
+            &:focus {
+              outline: none;
+            }
+          }
+
+          input[type="submit"] {
+            cursor: pointer;
+            background-color: rgb(111, 206, 206);
+
+            &:active {
+              transform: scale(0.95);
+            }
+          }
+        }
+      }
+    }
+  }
+}
